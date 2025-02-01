@@ -52,11 +52,11 @@ logger:Log("Back to default formatting.")
 ```
 
 ### Getting Format
-`GetFormat` will return the ANSII format for the current text and background colors aswell as the modifiers.\
+`GetFormat` will return the ANSI format for the current text and background colors aswell as the modifiers.\
 _Note: You will need at add the reset format at the end if you don't want your console to stay formatted._
 ```lua
 local format = logger:GetFormat()
-print(format .. "Custom print with the same ANSII formatting." .. "\27[0")
+print(format .. "Custom print with the same ANSI formatting." .. "\27[0")
 ```
 
 ## Available Colors and Modifiers
