@@ -17,11 +17,13 @@ local logger = MessageLogger.new()
 
 ## Usage
 ### Basic Logging
+`Log` is used to log with the current format settings.
 ```lua
 logger:Log("Hello, world!")
 ```
 
 ### Setting Text and Background Colors
+`SetTextColor` and `SetTextBackground` are used to change the text and background colors.
 ```lua
 logger:SetTextColor("red")
 logger:SetBackgroundColor("black")
@@ -29,15 +31,32 @@ logger:Log("This is a red message on a black background!")
 ```
 
 ### Adding Modifiers
+`AddModifier` will enable the provided modifier.
 ```lua
 logger:AddModifier("bold")
 logger:Log("This text is bold!")
 ```
 
+### Removing Modifiers
+`RemoveModifier` will disable the provided modifier.
+```lua
+logger:RemoveModifier("bold")
+logger:Log("This text is not longer bold.")
+```
+
 ### Resetting Logger
+`Reset` changes the text and background colors to default while disabling all modifiers.
 ```lua
 logger:Reset()
 logger:Log("Back to default formatting.")
+```
+
+### Getting Format
+`GetFormat` will return the ANSII format for the current text and background colors aswell as the modifiers.\
+_Note: You will need at add the reset format at the end if you don't want your console to stay formatted._
+```lua
+local format = logger:GetFormat()
+print(format .. "Custom print with the same ANSII formatting." .. "\27[0")
 ```
 
 ## Available Colors and Modifiers
